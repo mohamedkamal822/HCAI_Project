@@ -13,7 +13,7 @@ The project aims to make learning sign language more accessible and interactive 
 
 ## Key Features
 
-- **Word and Phrase Search:** Users can enter words and phrases in Arabic or English.
+- **Word Search:** Users can enter words in Arabic or English.
 - **Verified Sign Demonstrations:** Displays corresponding sign language videos from a predefined dataset.
 - **Reliable Results:** Only verified signs available in the dataset are displayed.
 - **Fallback Handling:** If an exact match is not found, the system informs the user that no verified result is currently available.
