@@ -1,0 +1,1 @@
+"""Ishara backend application package."""

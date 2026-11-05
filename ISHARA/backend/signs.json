@@ -4,7 +4,16 @@
         "franco": "3amel eh",
         "arabic": "عامل إيه",
         "english": "How are you",
-        "aliases": [],
+        "aliases": [
+            "a3mel eh",
+            "3aml eh",
+            "ezayak",
+            "ezayek",
+            "إزيك",
+            "عامل ايه",
+            "how are you doing",
+            "اخبارك"
+        ],
         "video": "dataset_selected_h264/3amel eh/3amel eh_7466.mp4"
     },
     "3ieb": {
@@ -12,7 +21,16 @@
         "franco": "3ieb",
         "arabic": "عيب",
         "english": "Shame",
-        "aliases": [],
+        "aliases": [
+            "3eib",
+            "aieb",
+            "3yb",
+            "عيب كده",
+            "عيب عليك",
+            "ashamed",
+            "disgraceful",
+            "shameful"
+        ],
         "video": "dataset_selected_h264/3ieb/3ieb_4781.mp4"
     },
     "3rabia": {
@@ -20,7 +38,16 @@
         "franco": "3rabia",
         "arabic": "عربية",
         "english": "Car",
-        "aliases": [],
+        "aliases": [
+            "3arabia",
+            "3arabeya",
+            "3rabeya",
+            "عربيه",
+            "سيارة",
+            "automobile",
+            "vehicle",
+            "auto"
+        ],
         "video": "dataset_selected_h264/3rabia/3rabia_2138.mp4"
     },
     "3waz": {
@@ -28,7 +55,16 @@
         "franco": "3waz",
         "arabic": "عاوز",
         "english": "Want",
-        "aliases": [],
+        "aliases": [
+            "3awez",
+            "3ayez",
+            "3awz",
+            "عايز",
+            "عاوزة",
+            "i want",
+            "need",
+            "wanna"
+        ],
         "video": "dataset_selected_h264/3waz/3waz_9342.mp4"
     },
     "akhoia": {
@@ -36,7 +72,16 @@
         "franco": "akhoia",
         "arabic": "أخويا",
         "english": "My brother",
-        "aliases": [],
+        "aliases": [
+            "akhouya",
+            "akhoya",
+            "akhuya",
+            "اخويا",
+            "أخي",
+            "اخويه",
+            "brother",
+            "bro"
+        ],
         "video": "dataset_selected_h264/akhoia/akhoia_9368.mp4"
     },
     "alam": {
@@ -44,7 +89,16 @@
         "franco": "alam",
         "arabic": "ألم",
         "english": "Pain",
-        "aliases": [],
+        "aliases": [
+            "alm",
+            "aalam",
+            "wag3",
+            "waga3",
+            "وجع",
+            "الم",
+            "hurt",
+            "ache"
+        ],
         "video": "dataset_selected_h264/alam/alam_4779.mp4"
     },
     "bhab": {
@@ -52,7 +106,16 @@
         "franco": "bhab",
         "arabic": "بحب",
         "english": "I love",
-        "aliases": [],
+        "aliases": [
+            "bahib",
+            "bahebb",
+            "beheb",
+            "بحبك",
+            "أحب",
+            "احب",
+            "love",
+            "i like"
+        ],
         "video": "dataset_selected_h264/bhab/bhab_5770.mp4"
     },
     "bkrh": {
@@ -60,7 +123,16 @@
         "franco": "bkrh",
         "arabic": "بكره",
         "english": "I hate",
-        "aliases": [],
+        "aliases": [
+            "bakrah",
+            "bakreh",
+            "بكرة",
+            "أكره",
+            "اكره",
+            "hate",
+            "i dislike",
+            "bakrahh"
+        ],
         "video": "dataset_selected_h264/bkrh/bkrh_8577.mp4"
     },
     "bsor3a": {
@@ -68,7 +140,16 @@
         "franco": "bsor3a",
         "arabic": "بسرعة",
         "english": "Quickly",
-        "aliases": [],
+        "aliases": [
+            "besor3a",
+            "bsur3a",
+            "bsor3ah",
+            "بسرعه",
+            "سريع",
+            "fast",
+            "hurry",
+            "على السريع"
+        ],
         "video": "dataset_selected_h264/bsor3a/bsor3a_6743.mp4"
     },
     "delwaty": {
@@ -76,7 +157,16 @@
         "franco": "delwaty",
         "arabic": "دلوقتي",
         "english": "Now",
-        "aliases": [],
+        "aliases": [
+            "dilwaqty",
+            "dilwa2ty",
+            "delwa2ty",
+            "dlwaqty",
+            "دلوقت",
+            "دلوقتى",
+            "الآن",
+            "right now"
+        ],
         "video": "dataset_selected_h264/delwaty/delwaty_6970.mp4"
     },
     "docktor": {
@@ -84,7 +174,16 @@
         "franco": "docktor",
         "arabic": "دكتور",
         "english": "Doctor",
-        "aliases": [],
+        "aliases": [
+            "doctor",
+            "doktor",
+            "dktor",
+            "دكتورة",
+            "طبيب",
+            "دكتوره",
+            "dr",
+            "physician"
+        ],
         "video": "dataset_selected_h264/docktor/docktor_4610.mp4"
     },
     "efrdha": {
@@ -92,7 +191,16 @@
         "franco": "efrdha",
         "arabic": "افرضها",
         "english": "Suppose it",
-        "aliases": [],
+        "aliases": [
+            "efradha",
+            "ifrdha",
+            "efrdaha",
+            "افرضه",
+            "افرض",
+            "فرضا",
+            "suppose",
+            "assume"
+        ],
         "video": "dataset_selected_h264/efrdha/efrdha_4749.mp4"
     },
     "ehtrem nfsk": {
@@ -100,7 +208,16 @@
         "franco": "ehtrem nfsk",
         "arabic": "احترم نفسك",
         "english": "Respect yourself",
-        "aliases": [],
+        "aliases": [
+            "ehtarem nafsak",
+            "ehtrem nafsak",
+            "ihtarim nafsak",
+            "احترمي نفسك",
+            "behave yourself",
+            "respect yourself",
+            "have some self respect",
+            "ihtaram nafsak"
+        ],
         "video": "dataset_selected_h264/ehtrem nfsk/ehtrem nfsk_3563.mp4"
     },
     "elnhrda": {
@@ -108,7 +225,16 @@
         "franco": "elnhrda",
         "arabic": "النهارده",
         "english": "Today",
-        "aliases": [],
+        "aliases": [
+            "el nharda",
+            "elnaharda",
+            "el naharda",
+            "النهاردة",
+            "اليوم",
+            "النهارضه",
+            "this day",
+            "today"
+        ],
         "video": "dataset_selected_h264/elnhrda/elnhrda_3905.mp4"
     },
     "ermy wra dhrk": {
@@ -116,7 +242,16 @@
         "franco": "ermy wra dhrk",
         "arabic": "ارمي ورا ضهرك",
         "english": "Forget about it",
-        "aliases": [],
+        "aliases": [
+            "ermi wara dahrak",
+            "ermy wara dahrak",
+            "irmi wara dahrak",
+            "انسى",
+            "انساه",
+            "forget it",
+            "let it go",
+            "انسى الموضوع"
+        ],
         "video": "dataset_selected_h264/ermy wra dhrk/ermy wra dhrk_2054.mp4"
     },
     "fatan": {
@@ -124,7 +259,16 @@
         "franco": "fatan",
         "arabic": "فتان",
         "english": "Troublemaker",
-        "aliases": [],
+        "aliases": [
+            "fattan",
+            "fattaan",
+            "fatann",
+            "فتّان",
+            "مشاغب",
+            "مثير للمشاكل",
+            "mischievous",
+            "instigator"
+        ],
         "video": "dataset_selected_h264/fatan/fatan_3500.mp4"
     },
     "fe sark": {
@@ -132,7 +276,16 @@
         "franco": "fe sark",
         "arabic": "في سرك",
         "english": "In secret",
-        "aliases": [],
+        "aliases": [
+            "fi sirrak",
+            "fe sarak",
+            "fe serak",
+            "سرا",
+            "في السر",
+            "secretly",
+            "privately",
+            "بالسر"
+        ],
         "video": "dataset_selected_h264/fe sark/fe sark_5799.mp4"
     },
     "flos": {
@@ -140,7 +293,16 @@
         "franco": "flos",
         "arabic": "فلوس",
         "english": "Money",
-        "aliases": [],
+        "aliases": [
+            "floos",
+            "flus",
+            "مال",
+            "نقود",
+            "cash",
+            "funds",
+            "فلوسي",
+            "قروش"
+        ],
         "video": "dataset_selected_h264/flos/flos_8472.mp4"
     },
     "fokk many": {
@@ -148,7 +310,16 @@
         "franco": "fokk many",
         "arabic": "فكك مني",
         "english": "Leave me alone",
-        "aliases": [],
+        "aliases": [
+            "fok menny",
+            "fokk meny",
+            "fok minni",
+            "فك مني",
+            "سيبني",
+            "سبني",
+            "leave me",
+            "get away from me"
+        ],
         "video": "dataset_selected_h264/fokk many/fokk many_8801.mp4"
     },
     "gomma": {
@@ -156,7 +327,16 @@
         "franco": "gomma",
         "arabic": "جمعة",
         "english": "Friday",
-        "aliases": [],
+        "aliases": [
+            "gom3a",
+            "gom3ah",
+            "goma",
+            "gomaa",
+            "الجمعة",
+            "جمعه",
+            "يوم الجمعة",
+            "fri"
+        ],
         "video": "dataset_selected_h264/gomma/gomma_5099.mp4"
     },
     "harmy": {
@@ -164,7 +344,16 @@
         "franco": "harmy",
         "arabic": "حرامي",
         "english": "Thief",
-        "aliases": [],
+        "aliases": [
+            "harami",
+            "haramy",
+            "7arami",
+            "حرامى",
+            "لص",
+            "سارق",
+            "robber",
+            "burglar"
+        ],
         "video": "dataset_selected_h264/harmy/harmy_6531.mp4"
     },
     "hba hba": {
@@ -172,7 +361,16 @@
         "franco": "hba hba",
         "arabic": "حبة حبة",
         "english": "Little by little",
-        "aliases": [],
+        "aliases": [
+            "haba haba",
+            "7aba 7aba",
+            "habba habba",
+            "حبه حبه",
+            "شوية شوية",
+            "بالتدريج",
+            "gradually",
+            "bit by bit"
+        ],
         "video": "dataset_selected_h264/hba hba/hba hba_3743.mp4"
     },
     "helw awy": {
@@ -180,7 +378,16 @@
         "franco": "helw awy",
         "arabic": "حلو أوي",
         "english": "Very nice",
-        "aliases": [],
+        "aliases": [
+            "helw awi",
+            "7elw awy",
+            "helo awy",
+            "حلو اوي",
+            "جميل جدا",
+            "حلو قوي",
+            "very good",
+            "beautiful"
+        ],
         "video": "dataset_selected_h264/helw awy/helw awy_9053.mp4"
     },
     "hta hta": {
@@ -188,7 +395,16 @@
         "franco": "hta hta",
         "arabic": "حتة حتة",
         "english": "Piece by piece",
-        "aliases": [],
+        "aliases": [
+            "hetta hetta",
+            "7ta 7ta",
+            "hitta hitta",
+            "حته حته",
+            "قطعة قطعة",
+            "جزء جزء",
+            "part by part",
+            "little piece"
+        ],
         "video": "dataset_selected_h264/hta hta/hta hta_2694.mp4"
     },
     "kdab": {
@@ -196,7 +412,16 @@
         "franco": "kdab",
         "arabic": "كداب",
         "english": "Liar",
-        "aliases": [],
+        "aliases": [
+            "kaddab",
+            "kaddaab",
+            "kazab",
+            "كذاب",
+            "كاذب",
+            "lying",
+            "deceiver",
+            "كدب"
+        ],
         "video": "dataset_selected_h264/kdab/kdab_5354.mp4"
     },
     "khaif": {
@@ -204,7 +429,16 @@
         "franco": "khaif",
         "arabic": "خايف",
         "english": "Afraid",
-        "aliases": [],
+        "aliases": [
+            "khayef",
+            "khayif",
+            "5aif",
+            "خائف",
+            "خايفة",
+            "خوف",
+            "scared",
+            "fear"
+        ],
         "video": "dataset_selected_h264/khaif/khaif_4048.mp4"
     },
     "khaly balk": {
@@ -212,7 +446,16 @@
         "franco": "khaly balk",
         "arabic": "خلي بالك",
         "english": "Be careful",
-        "aliases": [],
+        "aliases": [
+            "khalli balak",
+            "khali balak",
+            "5aly balk",
+            "خلى بالك",
+            "خد بالك",
+            "انتبه",
+            "watch out",
+            "take care"
+        ],
         "video": "dataset_selected_h264/khaly balk/khaly balk_1771.mp4"
     },
     "khatbty": {
@@ -220,7 +463,16 @@
         "franco": "khatbty",
         "arabic": "خطيبتي",
         "english": "My fiancée",
-        "aliases": [],
+        "aliases": [
+            "khatibti",
+            "khatebty",
+            "5atbty",
+            "خطيبتى",
+            "خطيبة",
+            "fiancee",
+            "fiance",
+            "خطيبه"
+        ],
         "video": "dataset_selected_h264/khatbty/khatbty_8110.mp4"
     },
     "kolya": {
@@ -228,7 +480,16 @@
         "franco": "kolya",
         "arabic": "كلية",
         "english": "College",
-        "aliases": [],
+        "aliases": [
+            "kollya",
+            "kolia",
+            "koleya",
+            "كليه",
+            "جامعة",
+            "الكلية",
+            "faculty",
+            "university"
+        ],
         "video": "dataset_selected_h264/kolya/kolya_8543.mp4"
     },
     "ktab": {
@@ -236,7 +497,16 @@
         "franco": "ktab",
         "arabic": "كتاب",
         "english": "Book",
-        "aliases": [],
+        "aliases": [
+            "kitab",
+            "ketab",
+            "kitaab",
+            "كتب",
+            "الكتاب",
+            "textbook",
+            "novel",
+            "كتابي"
+        ],
         "video": "dataset_selected_h264/ktab/ktab_9962.mp4"
     },
     "mafish": {
@@ -244,7 +514,16 @@
         "franco": "mafish",
         "arabic": "مفيش",
         "english": "There is none",
-        "aliases": [],
+        "aliases": [
+            "mafeesh",
+            "mafesh",
+            "مافيش",
+            "لا يوجد",
+            "nothing",
+            "none",
+            "مفيش حاجة",
+            "ما فيش"
+        ],
         "video": "dataset_selected_h264/mafish/mafish_6558.mp4"
     },
     "makar": {
@@ -252,7 +531,16 @@
         "franco": "makar",
         "arabic": "مكار",
         "english": "Cunning",
-        "aliases": [],
+        "aliases": [
+            "makkar",
+            "makaar",
+            "makkaar",
+            "ماكر",
+            "مكّار",
+            "محتال",
+            "sly",
+            "crafty"
+        ],
         "video": "dataset_selected_h264/makar/makar_1690.mp4"
     },
     "manzel": {
@@ -260,7 +548,16 @@
         "franco": "manzel",
         "arabic": "منزل",
         "english": "House",
-        "aliases": [],
+        "aliases": [
+            "manzil",
+            "menzel",
+            "manzal",
+            "بيت",
+            "البيت",
+            "المنزل",
+            "home",
+            "residence"
+        ],
         "video": "dataset_selected_h264/manzel/manzel_7442.mp4"
     },
     "mash mashy": {
@@ -268,7 +565,16 @@
         "franco": "mash mashy",
         "arabic": "مش ماشي",
         "english": "Not working",
-        "aliases": [],
+        "aliases": [
+            "msh mashy",
+            "mesh mashy",
+            "mish mashi",
+            "مش ماشى",
+            "مش شغال",
+            "معطل",
+            "broken",
+            "not okay"
+        ],
         "video": "dataset_selected_h264/mash mashy/mash mashy_8205.mp4"
     },
     "mashy": {
@@ -276,7 +582,16 @@
         "franco": "mashy",
         "arabic": "ماشي",
         "english": "Okay",
-        "aliases": [],
+        "aliases": [
+            "mashi",
+            "masshy",
+            "mashee",
+            "ماشى",
+            "اوكي",
+            "تمام كده",
+            "ok",
+            "alright"
+        ],
         "video": "dataset_selected_h264/mashy/mashy_1064.mp4"
     },
     "meraty": {
@@ -284,7 +599,16 @@
         "franco": "meraty",
         "arabic": "مراتي",
         "english": "My wife",
-        "aliases": [],
+        "aliases": [
+            "marati",
+            "merati",
+            "mrati",
+            "مراتى",
+            "زوجتي",
+            "زوجتى",
+            "wife",
+            "spouse"
+        ],
         "video": "dataset_selected_h264/meraty/meraty_2151.mp4"
     },
     "mohands": {
@@ -292,7 +616,16 @@
         "franco": "mohands",
         "arabic": "مهندس",
         "english": "Engineer",
-        "aliases": [],
+        "aliases": [
+            "mohandes",
+            "muhandis",
+            "mohandis",
+            "مهندسة",
+            "المهندس",
+            "هندسة",
+            "eng",
+            "engineering"
+        ],
         "video": "dataset_selected_h264/mohands/mohands_9670.mp4"
     },
     "moshwash": {
@@ -300,7 +633,16 @@
         "franco": "moshwash",
         "arabic": "مشوش",
         "english": "Confused",
-        "aliases": [],
+        "aliases": [
+            "mshwash",
+            "moshawash",
+            "moshawesh",
+            "مشوّش",
+            "محتار",
+            "مش فاهم",
+            "puzzled",
+            "bewildered"
+        ],
         "video": "dataset_selected_h264/moshwash/moshwash_3464.mp4"
     },
     "msh 3waz": {
@@ -308,7 +650,16 @@
         "franco": "msh 3waz",
         "arabic": "مش عاوز",
         "english": "Don't want",
-        "aliases": [],
+        "aliases": [
+            "mesh 3awez",
+            "msh 3awz",
+            "mish 3ayez",
+            "مش عايز",
+            "مش عاوزة",
+            "لا اريد",
+            "do not want",
+            "dont want"
+        ],
         "video": "dataset_selected_h264/msh 3waz/msh 3waz_7815.mp4"
     },
     "oda": {
@@ -316,7 +667,16 @@
         "franco": "oda",
         "arabic": "أوضة",
         "english": "Room",
-        "aliases": [],
+        "aliases": [
+            "odah",
+            "ouda",
+            "oudah",
+            "اوضة",
+            "غرفة",
+            "أوضه",
+            "bedroom",
+            "chamber"
+        ],
         "video": "dataset_selected_h264/oda/oda_2859.mp4"
     },
     "sabhl elkheer": {
@@ -324,7 +684,16 @@
         "franco": "sabhl elkheer",
         "arabic": "صباح الخير",
         "english": "Good morning",
-        "aliases": [],
+        "aliases": [
+            "sabah elkheir",
+            "sabah el kheer",
+            "sabahelkhair",
+            "صباحو",
+            "صباح",
+            "morning",
+            "good day",
+            "sabah elkhair"
+        ],
         "video": "dataset_selected_h264/sabhl elkheer/sabhl elkheer_5728.mp4"
     },
     "sabhlala": {
@@ -332,7 +701,16 @@
         "franco": "sabhlala",
         "arabic": "سبهللة",
         "english": "Carelessly",
-        "aliases": [],
+        "aliases": [
+            "sabahlala",
+            "sabhlalah",
+            "sabahlalla",
+            "سبهلله",
+            "بإهمال",
+            "بدون اهتمام",
+            "negligently",
+            "recklessly"
+        ],
         "video": "dataset_selected_h264/sabhlala/sabhlala_8861.mp4"
     },
     "sadak": {
@@ -340,7 +718,16 @@
         "franco": "sadak",
         "arabic": "صدق",
         "english": "Truth",
-        "aliases": [],
+        "aliases": [
+            "sadaq",
+            "sedq",
+            "sidq",
+            "الصدق",
+            "حقيقة",
+            "honesty",
+            "truthful",
+            "الحق"
+        ],
         "video": "dataset_selected_h264/sadak/sadak_2164.mp4"
     },
     "sahby": {
@@ -348,7 +735,16 @@
         "franco": "sahby",
         "arabic": "صاحبي",
         "english": "My friend",
-        "aliases": [],
+        "aliases": [
+            "sahbi",
+            "sa7by",
+            "sahaby",
+            "صاحبى",
+            "صديقي",
+            "صديقى",
+            "friend",
+            "buddy"
+        ],
         "video": "dataset_selected_h264/sahby/sahby_3868.mp4"
     },
     "sbak": {
@@ -356,7 +752,16 @@
         "franco": "sbak",
         "arabic": "سباك",
         "english": "Plumber",
-        "aliases": [],
+        "aliases": [
+            "sabbak",
+            "sabaak",
+            "sbbak",
+            "سبّاك",
+            "السباك",
+            "فني مواسير",
+            "plumbing",
+            "pipe fitter"
+        ],
         "video": "dataset_selected_h264/sbak/sbak_4840.mp4"
     },
     "shar3": {
@@ -364,7 +769,16 @@
         "franco": "shar3",
         "arabic": "شارع",
         "english": "Street",
-        "aliases": [],
+        "aliases": [
+            "share3",
+            "shari3",
+            "shar3a",
+            "الشارع",
+            "طريق",
+            "road",
+            "avenue",
+            "شوارع"
+        ],
         "video": "dataset_selected_h264/shar3/shar3_4382.mp4"
     },
     "shbak": {
@@ -372,7 +786,16 @@
         "franco": "shbak",
         "arabic": "شباك",
         "english": "Window",
-        "aliases": [],
+        "aliases": [
+            "shubbak",
+            "shebak",
+            "shobak",
+            "الشباك",
+            "نافذة",
+            "شبّاك",
+            "glass window",
+            "pane"
+        ],
         "video": "dataset_selected_h264/shbak/shbak_8229.mp4"
     },
     "t3ban": {
@@ -380,7 +803,16 @@
         "franco": "t3ban",
         "arabic": "تعبان",
         "english": "Tired",
-        "aliases": [],
+        "aliases": [
+            "ta3ban",
+            "ta3baan",
+            "t3baan",
+            "تعبانة",
+            "مرهق",
+            "تعب",
+            "exhausted",
+            "fatigued"
+        ],
         "video": "dataset_selected_h264/t3ban/t3ban_7085.mp4"
     },
     "tmam": {
@@ -388,7 +820,16 @@
         "franco": "tmam",
         "arabic": "تمام",
         "english": "Fine",
-        "aliases": [],
+        "aliases": [
+            "tamam",
+            "tamaam",
+            "tmaam",
+            "كويس",
+            "كويسة",
+            "good",
+            "okay fine",
+            "تمام التمام"
+        ],
         "video": "dataset_selected_h264/tmam/tmam_4092.mp4"
     },
     "whashny": {
@@ -396,7 +837,16 @@
         "franco": "whashny",
         "arabic": "وحشني",
         "english": "I miss him",
-        "aliases": [],
+        "aliases": [
+            "wahashny",
+            "wahshni",
+            "wa7ashny",
+            "وحشتني",
+            "وحشنى",
+            "وحشتنى",
+            "i miss you",
+            "missing"
+        ],
         "video": "dataset_selected_h264/whashny/whashny_5033.mp4"
     },
     "whda whda": {
@@ -404,7 +854,16 @@
         "franco": "whda whda",
         "arabic": "واحدة واحدة",
         "english": "Slowly",
-        "aliases": [],
+        "aliases": [
+            "wahda wahda",
+            "wa7da wa7da",
+            "wahda wahdah",
+            "واحده واحده",
+            "براحة",
+            "ببطء",
+            "gently",
+            "step by step"
+        ],
         "video": "dataset_selected_h264/whda whda/whda whda_8267.mp4"
     },
     "y7takr": {
@@ -412,7 +871,16 @@
         "franco": "y7takr",
         "arabic": "يحتقر",
         "english": "Despise",
-        "aliases": [],
+        "aliases": [
+            "yahtaqir",
+            "yehtaqer",
+            "yehtekr",
+            "يحتقره",
+            "احتقر",
+            "يحقر",
+            "scorn",
+            "look down on"
+        ],
         "video": "dataset_selected_h264/y7takr/y7takr_9921.mp4"
     },
     "yabky": {
@@ -420,7 +888,16 @@
         "franco": "yabky",
         "arabic": "يبكي",
         "english": "Cry",
-        "aliases": [],
+        "aliases": [
+            "yebky",
+            "yabki",
+            "yebki",
+            "يبكى",
+            "بيعيط",
+            "عياط",
+            "weep",
+            "sob"
+        ],
         "video": "dataset_selected_h264/yabky/yabky_9085.mp4"
     },
     "yadhk": {
@@ -428,7 +905,16 @@
         "franco": "yadhk",
         "arabic": "يضحك",
         "english": "Laugh",
-        "aliases": [],
+        "aliases": [
+            "yedhak",
+            "yadhak",
+            "yedhk",
+            "بيضحك",
+            "ضحك",
+            "smile",
+            "giggle",
+            "ضحكة"
+        ],
         "video": "dataset_selected_h264/yadhk/yadhk_1971.mp4"
     },
     "yallhwy": {
@@ -436,7 +922,16 @@
         "franco": "yallhwy",
         "arabic": "يا لهوي",
         "english": "Oh my goodness",
-        "aliases": [],
+        "aliases": [
+            "ya lahwy",
+            "yalahwi",
+            "ya lahwi",
+            "يالهوي",
+            "يا لهوى",
+            "يا نهار",
+            "oh my god",
+            "oh no"
+        ],
         "video": "dataset_selected_h264/yallhwy/yallhwy_5276.mp4"
     },
     "yshtm": {
@@ -444,7 +939,16 @@
         "franco": "yshtm",
         "arabic": "يشتم",
         "english": "Insult",
-        "aliases": [],
+        "aliases": [
+            "yeshtem",
+            "yashtim",
+            "yeshtim",
+            "يسب",
+            "شتيمة",
+            "سب",
+            "swear",
+            "curse"
+        ],
         "video": "dataset_selected_h264/yshtm/yshtm_5838.mp4"
     }
 }

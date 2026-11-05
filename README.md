@@ -48,7 +48,18 @@ HCAI_Project/
     │   ├── main.py
     │   ├── signs.json
     │   ├── build_signs_index.py
-    │   └── prepare_dataset.py
+    │   ├── prepare_dataset.py
+    │   └── app/
+    │       ├── api/
+    │       │   ├── routes.py
+    │       │   └── schemas.py
+    │       ├── core/config.py
+    │       ├── domain/catalog.py
+    │       ├── llm/
+    │       │   ├── gemini.py
+    │       │   ├── prompts.py
+    │       │   └── README.md
+    │       └── services/traces.py
     │
     ├── frontend/
     │   └── index.html
@@ -80,13 +91,23 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
-### 4. Build the Sign Index
+### 4. Configure the model and handover resource
+
+Copy `ISHARA/.env.example` to `ISHARA/.env`, then set a new Google AI Studio Gemini API key. Do not commit `.env`.
+
+After revoking any exposed key and adding its replacement, set `GEMINI_KEY_ROTATED_AT` to the date of rotation. The backend refuses model calls until this confirmation is present.
+
+Optionally set `HUMAN_HANDOVER_URL` to a verified Egyptian Sign Language instructor or official support resource before the presentation.
+
+The default model is `gemini-3.5-flash-lite`; `GEMINI_MODEL` in `.env` can override it. Choose a model returned by `GET /models`.
+
+### 5. Build the Sign Index
 
 ```bash
 python backend/build_signs_index.py
 ```
 
-### 5. Run the Backend
+### 6. Run the Backend
 
 ```bash
 python -m uvicorn backend.main:app --reload
@@ -96,7 +117,7 @@ The backend will be available at:
 
 `http://127.0.0.1:8000`
 
-### 6. Open the Frontend
+### 7. Open the Frontend
 
 Open `frontend/index.html` in your browser.
 
@@ -105,6 +126,10 @@ Open `frontend/index.html` in your browser.
 ## Project Scope
 
 Ishara currently focuses on searching a predefined collection of verified Egyptian Sign Language signs. Its results are limited to the available dataset, ensuring that the system does not present unsupported or unverified translations.
+
+See [ARCHITECTURE.md](ARCHITECTURE.md) for the trace-first system architecture and Explainability flow.
+
+Week 5 check-in materials, including the conversation flow, Golden Rules checklist, and Appendix A prompt log, are in [WEEK5_DELIVERABLES.md](WEEK5_DELIVERABLES.md).
 
 ## Team
 

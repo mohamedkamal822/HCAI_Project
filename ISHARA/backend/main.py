@@ -1,33 +1,21 @@
-
-import json
-from pathlib import Path
-from urllib.parse import quote
-
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
+from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
-from pydantic import BaseModel, Field
 
-
-# Project paths
-BASE_DIR = Path(__file__).resolve().parent.parent
-DATASET_DIR = BASE_DIR / "dataset_selected_h264"
-JSON_PATH = Path(__file__).resolve().parent / "signs.json"
-
-
-# Load sign language data
-with open(JSON_PATH, "r", encoding="utf-8") as file:
-    signs = json.load(file)
+from .app.api.routes import router
+from .app.core.config import MAX_TRACES, SIGNS_PATH, VIDEOS_DIR
+from .app.domain.catalog import SignCatalog
+from .app.llm.gemini import GeminiService
+from .app.services.traces import TraceStore
 
 
 app = FastAPI(
     title="Ishara API",
     description="Backend for the Ishara Sign Language Learning Chatbot",
-    version="1.0.0"
+    version="1.2.0",
 )
-
-
-# CORS configuration
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -35,120 +23,60 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+app.state.catalog = SignCatalog(SIGNS_PATH)
+app.state.traces = TraceStore(MAX_TRACES)
+app.state.gemini = GeminiService()
+app.mount("/videos", StaticFiles(directory=str(VIDEOS_DIR)), name="videos")
+app.include_router(router)
 
 
-# Serve sign videos
-app.mount(
-    "/videos",
-    StaticFiles(directory=str(DATASET_DIR)),
-    name="videos"
-)
+@app.exception_handler(RequestValidationError)
+async def chat_validation_handler(request: Request, error: RequestValidationError):
+    if request.url.path != "/chat":
+        return JSONResponse(status_code=422, content={"detail": "The request did not match the expected format."})
 
-
-# Request format
-class ChatRequest(BaseModel):
-    message: str = Field(min_length=1)
-
-
-# Normalize user input
-def normalize_text(text):
-    return " ".join(text.strip().casefold().split())
-
-
-# Search for a sign
-def find_sign(message):
-
-    search_term = normalize_text(message)
-
-    for sign in signs.values():
-
-        searchable_values = [
-            sign["franco"],
-            sign["arabic"],
-            sign["english"],
-            *sign.get("aliases", [])
-        ]
-
-        for value in searchable_values:
-
-            if value and normalize_text(value) == search_term:
-                return sign
-
-    return None
-
-
-# Home endpoint
-@app.get("/")
-def home():
-    return {
-        "message": "Welcome to Ishara API!",
-        "status": "running",
-        "total_signs": len(signs)
+    body = error.body if isinstance(error.body, dict) else {}
+    input_text = body.get("message", "")
+    trace = {
+        "rule": "R5",
+        "result_type": "out_of_scope",
+        "input": input_text,
+        "detected_intent": "invalid_chat_input",
+        "intent_reason": "validation_error",
+        "validation_error_types": [item.get("type", "invalid") for item in error.errors()],
     }
+    trace_id = app.state.traces.add(trace)
+    return JSONResponse(
+        status_code=422,
+        content={
+            "status": "out_of_scope",
+            "rule": "R5",
+            "reply": "أرسل كلمة أو عبارة قصيرة للبحث، أو اكتب «اختبار» لبدء الاختبار.",
+            "trace_id": trace_id,
+        },
+        headers={"Access-Control-Allow-Origin": "*"},
+    )
 
 
-# Chat endpoint
-
-@app.post("/chat")
-def chat(request: ChatRequest):
-
-    sign = find_sign(request.message)
-
-    # Sign not found
-    if sign is None:
-        return {
-            "status": "not_found",
-            "reply": (
-                f'لم نجد إشارة موثقة لكلمة "{request.message}". '
-                "جربي كلمة أخرى."
-            ),
-            "video_url": None
-        }
-
-    # Build video URL
-    video_path = Path(sign["video"]).relative_to("dataset_selected")
-    video_path = quote(video_path.as_posix(), safe="/")
-
-    video_url = f"/videos/{video_path}"
-
-    return {
-        "status": "found",
-        "reply": f'الإشارة المطلوبة: {sign["arabic"]}',
-        "arabic": sign["arabic"],
-        "english": sign["english"],
-        "franco": sign["franco"],
-        "video_url": video_url
+@app.exception_handler(Exception)
+async def system_error_handler(request: Request, error: Exception):
+    trace = {
+        "rule": "R6",
+        "result_type": "system_error",
+        "route": request.url.path,
+        "error_type": type(error).__name__,
+        "detected_intent": "system_failure",
     }
-
-
-@app.get("/quiz")
-def get_quiz_questions():
-
-    selected_words = [
-        "bsor3a",
-        "mashy",
-        "tmam",
-        "flos",
-        "whashny"
-    ]
-
-    quiz_questions = []
-
-    for word in selected_words:
-        sign = signs[word]
-
-        video_path = Path(sign["video"]).relative_to("dataset_selected")
-        video_path = quote(video_path.as_posix(), safe="/")
-
-        quiz_questions.append({
-            "id": sign["id"],
-            "arabic": sign["arabic"],
-            "english": sign["english"],
-            "franco": sign["franco"],
-            "video_url": f"/videos/{video_path}"
-        })
-
-    return {
-        "status": "success",
-        "questions": quiz_questions
-    }
+    trace_id = app.state.traces.add(trace)
+    return JSONResponse(
+        status_code=503,
+        content={
+            "status": "system_error",
+            "rule": "R6",
+            "reply": "واجهنا مشكلة مؤقتة. حاول مرة أخرى بعد قليل.",
+            "error_type": type(error).__name__,
+            "trace_id": trace_id,
+            "retryable": True,
+        },
+        headers={"Access-Control-Allow-Origin": "*"},
+    )
