@@ -1,136 +1,111 @@
-# HCAI_Project
-# Ishara – Egyptian Sign Language Learning Chatbot
+# Ishara — Egyptian Sign Language Learning Assistant
 
 **Team:** CoMind
-
+**Project:** HCAI human–AI interaction term project
 **Tagline:** Breaking Barriers, Expanding Access.
 
-## About the Project
+Ishara helps Arabic-speaking beginners explore Egyptian Sign Language through a searchable library of sign videos and a short interactive quiz. Search results come from the team's sign catalog; Gemini can provide a short, learning-focused response only after a verified sign is found.
 
-Ishara is an educational chatbot designed to help Arabic-speaking beginners learn Egyptian Sign Language (ESL) through verified sign language video demonstrations.
+## Features
 
-The project aims to make learning sign language more accessible and interactive by allowing users to search for words and phrases in either Arabic or English and explore their corresponding signs.
+- Search using Arabic, English, Franco-Arabic, and reviewed aliases.
+- Display catalog-backed sign labels, explanations, and local videos.
+- Distinguish exact matches, reviewed alternatives, related candidates, out-of-scope input, and system errors (R1–R6).
+- Show a decision trace through the “Why this result?” control.
+- Practice with a randomized sign-video quiz, score progress, and retry.
+- Offer recovery actions and optional handover to a configured instructor or official resource.
+- Use Gemini through the FastAPI backend; generated text does not select signs or videos.
 
-## Key Features
+Related suggestions use normalized character similarity with threshold `0.72`; this is not semantic similarity. A related candidate is never presented as the answer to the searched term.
 
-- **Word Search:** Users can enter words in Arabic or English.
-- **Verified Sign Demonstrations:** Displays corresponding sign language videos from a predefined dataset.
-- **Reliable Results:** Only verified signs available in the dataset are displayed.
-- **Fallback Handling:** If an exact match is not found, the system informs the user that no verified result is currently available.
+## Architecture
 
-## How It Works
+The browser interface (`frontend/`) sends chat and quiz requests to the FastAPI backend (`backend/`). The backend validates input, matches against `backend/signs.json`, serves videos from `dataset_selected_h264/`, records decision traces, and calls Gemini only for verified matches. Model replies pass relevance and format checks; if Gemini is unavailable or its reply fails validation, the verified catalog result remains available without generated text.
 
-1. The user enters a word or phrase through the chatbot interface.
-2. The frontend sends the input to the backend.
-3. The backend searches the available sign database.
-4. If a matching verified sign is found, its video is returned and displayed.
-5. If no match exists, the chatbot provides an appropriate fallback response.
-
-## Technologies Used
-
-- **Frontend:** HTML, CSS, JavaScript
-- **Backend:** Python, FastAPI
-- **Data Storage:** JSON-based sign index
-- **Dataset:** Egyptian Sign Language video collection
+See [ARCHITECTURE.md](ARCHITECTURE.md) for the system diagram and [WEEK5_DELIVERABLES.md](WEEK5_DELIVERABLES.md) for the conversation flow, Golden Rules checklist, model-demo status, and prompt log.
 
 ## Project Structure
 
 ```text
 HCAI_Project/
+├── ARCHITECTURE.md
+├── WEEK5_DELIVERABLES.md
 ├── README.md
-├── Milestone_1.pdf
-├── Week 3 Users and data.pdf
-├── Week 4 Objectives and Ladder.pdf
-├── CoMind week5.pdf
-│
 └── ISHARA/
+    ├── .env.example
+    ├── requirements.txt
     ├── backend/
     │   ├── main.py
     │   ├── signs.json
-    │   ├── build_signs_index.py
-    │   ├── prepare_dataset.py
     │   └── app/
-    │       ├── api/
-    │       │   ├── routes.py
-    │       │   └── schemas.py
-    │       ├── core/config.py
-    │       ├── domain/catalog.py
-    │       ├── llm/
-    │       │   ├── gemini.py
-    │       │   ├── prompts.py
-    │       │   └── README.md
-    │       └── services/traces.py
-    │
+    │       ├── api/          # FastAPI routes and request schemas
+    │       ├── core/         # Configuration
+    │       ├── domain/       # Sign catalog and matching rules
+    │       ├── llm/          # Gemini client and prompts
+    │       └── services/     # Decision trace storage
     ├── frontend/
-    │   └── index.html
-    │
-    ├── dataset_selected_h264/
-    │
-    └── convert_videos.py
+    │   ├── index.html
+    │   ├── style.css
+    │   └── script.js
+    └── dataset_selected_h264/ # Local sign videos
 ```
 
 ## Getting Started
 
-### 1. Clone the Repository
+### Requirements
 
-```bash
-git clone https://github.com/mohamedkamal822/HCAI_Project.git
-cd HCAI_Project/ISHARA
-```
+- Python 3.10 or newer
+- A Google AI Studio API key for Gemini-generated replies (optional for catalog search and quiz)
 
-### 2. Create and Activate a Virtual Environment
+### Install
+
+From the repository root:
 
 ```powershell
+cd ISHARA
 python -m venv .venv
-.venv\Scripts\activate
-```
-
-### 3. Install Dependencies
-
-```bash
+.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
+Copy-Item .env.example .env
 ```
 
-### 4. Configure the model and handover resource
+Edit `.env` and set `GEMINI_API_KEY` to a valid key. If the key was rotated after exposure, set `GEMINI_KEY_ROTATED_AT` to the rotation date in `YYYY-MM-DD` format. Do not commit `.env` or share the key. The default model is `gemini-3.5-flash-lite`; `GEMINI_MODEL` can override it with a model available to your AI Studio key. Set `HUMAN_HANDOVER_URL` to a verified instructor or official resource if you want the handover action to open a destination.
 
-Copy `ISHARA/.env.example` to `ISHARA/.env`, then set a new Google AI Studio Gemini API key. Do not commit `.env`.
+### Start the backend
 
-After revoking any exposed key and adding its replacement, set `GEMINI_KEY_ROTATED_AT` to the date of rotation. The backend refuses model calls until this confirmation is present.
+Run from the `ISHARA` directory:
 
-Optionally set `HUMAN_HANDOVER_URL` to a verified Egyptian Sign Language instructor or official support resource before the presentation.
-
-The default model is `gemini-3.5-flash-lite`; `GEMINI_MODEL` in `.env` can override it. Choose a model returned by `GET /models`.
-
-### 5. Build the Sign Index
-
-```bash
-python backend/build_signs_index.py
-```
-
-### 6. Run the Backend
-
-```bash
+```powershell
 python -m uvicorn backend.main:app --reload
 ```
 
-The backend will be available at:
+The API is available at `http://127.0.0.1:8000`. Interactive API documentation is at `http://127.0.0.1:8000/docs`.
 
-`http://127.0.0.1:8000`
+### Start the frontend
 
-### 7. Open the Frontend
+In a second terminal, from the `ISHARA` directory:
 
-Open `frontend/index.html` in your browser.
+```powershell
+python -m http.server 5500 --directory frontend
+```
 
-*Note: The frontend and backend must be configured to communicate with each other for the application to work correctly.*
+Open `http://127.0.0.1:5500` while the backend is running.
 
-## Project Scope
+## API Endpoints
 
-Ishara currently focuses on searching a predefined collection of verified Egyptian Sign Language signs. Its results are limited to the available dataset, ensuring that the system does not present unsupported or unverified translations.
+| Method | Path | Purpose |
+| --- | --- | --- |
+| `POST` | `/chat` | Search the sign catalog and return the result, trace ID, and optional grounded model reply. |
+| `GET` | `/quiz` | Get quiz questions and video paths. |
+| `GET` | `/trace/{trace_id}` | Retrieve the decision trace for a response. |
+| `POST` | `/feedback` | Submit feedback on a result. |
+| `GET` | `/models` | List Gemini models available to the configured key. |
+| `GET` | `/videos/{path}` | Serve a catalog video. |
 
-See [ARCHITECTURE.md](ARCHITECTURE.md) for the trace-first system architecture and Explainability flow.
+## Scope and Limitations
 
-Week 5 check-in materials, including the conversation flow, Golden Rules checklist, and Appendix A prompt log, are in [WEEK5_DELIVERABLES.md](WEEK5_DELIVERABLES.md).
+Ishara is a learning prototype, not an authoritative translation service. Its verified results are limited to the included catalog, and related suggestions are approximate string matches. For uncertain signs, consult a qualified Egyptian Sign Language instructor. The handover link is optional and must be configured by the project team.
 
 ## Team
 
-**CoMind** – Human-AI Interaction Course Project
+**CoMind** — Human-AI Interaction Course Project
