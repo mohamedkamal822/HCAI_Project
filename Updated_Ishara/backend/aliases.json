@@ -1,0 +1,173 @@
+{
+  "_about": "Team-reviewed alternative words and spellings (rule R2), confusable words (shown as related, never exact), and notes shown in the 'Why this result?' panel. Edit this file, not signs.json. Every alias must mean the same thing as the dataset label.",
+  "aliases": {
+    "3amel eh": [
+      "عاملة إيه",
+      "عامله ايه",
+      "عامل ايه يا",
+      "how are you doing"
+    ],
+    "3rabia": [
+      "عربيه",
+      "سيارة",
+      "سياره",
+      "العربية",
+      "العربيه"
+    ],
+    "3waz": [
+      "عايز",
+      "عاوزة",
+      "عاوزه",
+      "عايزة",
+      "عايزه",
+      "i want"
+    ],
+    "msh 3waz": [
+      "مش عايز",
+      "مش عاوزة",
+      "مش عاوزه",
+      "مش عايزة",
+      "مش عايزه",
+      "do not want",
+      "dont want"
+    ],
+    "alam": [
+      "الألم",
+      "وجع"
+    ],
+    "delwaty": [
+      "دلوقت",
+      "الآن",
+      "الان"
+    ],
+    "docktor": [
+      "دكتورة",
+      "دكتوره",
+      "طبيب",
+      "طبيبة",
+      "الدكتور",
+      "doctor"
+    ],
+    "elnhrda": [
+      "النهاردة",
+      "انهارده",
+      "انهاردة",
+      "اليوم"
+    ],
+    "gomma": [
+      "جمعه",
+      "الجمعة",
+      "الجمعه",
+      "يوم الجمعة",
+      "يوم الجمعه"
+    ],
+    "hba hba": [
+      "حبه حبه"
+    ],
+    "hta hta": [
+      "حته حته"
+    ],
+    "whda whda": [
+      "واحده واحده",
+      "wahda wahda"
+    ],
+    "helw awy": [
+      "حلو قوي",
+      "حلو اوى"
+    ],
+    "khaif": [
+      "خايفة",
+      "خايفه",
+      "scared"
+    ],
+    "kdab": [
+      "كذاب",
+      "كدابة",
+      "كدابه"
+    ],
+    "ktab": [
+      "الكتاب"
+    ],
+    "kolya": [
+      "كليه",
+      "الكلية",
+      "الكليه"
+    ],
+    "manzel": [
+      "بيت",
+      "البيت",
+      "المنزل",
+      "home"
+    ],
+    "oda": [
+      "اوضه",
+      "أوضه",
+      "الأوضة",
+      "غرفة",
+      "غرفه"
+    ],
+    "flos": [
+      "الفلوس",
+      "نقود"
+    ],
+    "shar3": [
+      "الشارع"
+    ],
+    "shbak": [
+      "الشباك",
+      "نافذة"
+    ],
+    "t3ban": [
+      "تعبانة",
+      "تعبانه"
+    ],
+    "khatbty": [
+      "my fiancee"
+    ],
+    "yallhwy": [
+      "يالهوي",
+      "يا لهوى"
+    ],
+    "sabhl elkheer": [
+      "sabah el kheer",
+      "sabah elkheer"
+    ],
+    "mashy": [
+      "ok"
+    ]
+  },
+  "confusables": {
+    "بكرة": {
+      "entry": "bkrh",
+      "en": "بكرة (tomorrow) is not in our dataset. The entry بكره in our dataset means 'I hate'. The words look alike but mean different things.",
+      "ar": "كلمة «بكرة» (يعني الغد) مش موجودة في الداتا. كلمة «بكره» اللي عندنا معناها «أكره». شكلهم شبه بعض بس معناهم مختلف."
+    },
+    "tomorrow": {
+      "entry": "bkrh",
+      "en": "'Tomorrow' is not in our dataset. The Arabic entry بكره looks like بكرة (tomorrow), but in our dataset it means 'I hate'.",
+      "ar": "كلمة «بكرة» (الغد) مش موجودة في الداتا. كلمة «بكره» اللي عندنا معناها «أكره»."
+    }
+  },
+  "entry_notes": {
+    "bkrh": {
+      "en": "Heads-up: in Egyptian Arabic بكره can also be read as 'tomorrow'. This video is labelled 'I hate'.",
+      "ar": "تنبيه: كلمة «بكره» ممكن تتقري «بكرة» يعني الغد. الفيديو ده معناه «أكره»."
+    },
+    "mashy": {
+      "en": "Heads-up: ماشي can also mean 'walking'. This video is labelled 'Okay'.",
+      "ar": "تنبيه: كلمة «ماشي» ممكن يكون معناها «بيمشي». الفيديو ده معناه «موافق»."
+    },
+    "mash mashy": {
+      "en": "This entry is the negative of ماشي (Okay).",
+      "ar": "الكلمة دي هي نفي «ماشي» يعني «موافق»."
+    },
+    "msh 3waz": {
+      "en": "This entry is the negative of عاوز (Want).",
+      "ar": "الكلمة دي هي نفي «عاوز»."
+    },
+    "whashny": {
+      "en": "The dataset label is 'I miss him'; in daily use وحشني can also mean 'I miss you'.",
+      "ar": "معنى الكلمة في الداتا «هو وحشني»، وفي الكلام اليومي ممكن تعني «وحشتني» كمان."
+    }
+  }
+}
