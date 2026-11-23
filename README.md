@@ -10,17 +10,17 @@ Ishara helps Arabic-speaking beginners explore Egyptian Sign Language through a 
 
 - Search using Arabic, English, Franco-Arabic, and reviewed aliases.
 - Display catalog-backed sign labels, explanations, and local videos.
-- Distinguish exact matches, reviewed alternatives, related candidates, out-of-scope input, and system errors (R1–R6).
+- Apply the full R0–R7 decision flow: help, exact labels, reviewed aliases, related candidates, no match, out-of-scope input, system errors, and safety handover.
 - Show a decision trace through the “Why this result?” control.
 - Practice with a randomized sign-video quiz, score progress, and retry.
 - Offer recovery actions and optional handover to a configured instructor or official resource.
 - Use Gemini through the FastAPI backend; generated text does not select signs or videos.
 
-Related suggestions use normalized character similarity with threshold `0.72`; this is not semantic similarity. A related candidate is never presented as the answer to the searched term.
+Related suggestions use normalized character similarity with threshold `0.70`; this is not semantic similarity. A related candidate is never presented as the answer to the searched term. Franco labels belong to R1; team-reviewed aliases belong to R2.
 
 ## Architecture
 
-The browser interface (`frontend/`) sends chat and quiz requests to the FastAPI backend (`backend/`). The backend validates input, matches against `backend/signs.json`, serves videos from `dataset_selected_h264/`, records decision traces, and calls Gemini only for verified matches. Model replies pass relevance and format checks; if Gemini is unavailable or its reply fails validation, the verified catalog result remains available without generated text.
+The bilingual browser interface (`frontend/index.html`, `style.css`, and `script.js`) sends chat, alternatives, feedback, and quiz requests to the FastAPI backend (`backend/`). The backend validates and normalizes input, applies deterministic safeguards and matching rules against `backend/signs.json` plus reviewed data in `backend/aliases.json`, serves videos from `dataset/`, and records bounded in-memory traces plus JSONL audit records. Gemini can rephrase R1–R4 responses using verified facts; it cannot choose a sign or video. A validated template remains available if Gemini is unavailable or returns off-topic text.
 
 See [ARCHITECTURE.md](ARCHITECTURE.md) for the system diagram and [WEEK5_DELIVERABLES.md](WEEK5_DELIVERABLES.md) for the conversation flow, Golden Rules checklist, model-demo status, and prompt log.
 
@@ -37,24 +37,27 @@ HCAI_Project/
     ├── backend/
     │   ├── main.py
     │   ├── signs.json
+    │   ├── aliases.json
+    │   ├── evaluation_test_set.csv
+    │   ├── run_evaluation.py
     │   └── app/
     │       ├── api/          # FastAPI routes and request schemas
     │       ├── core/         # Configuration
     │       ├── domain/       # Sign catalog and matching rules
     │       ├── llm/          # Gemini client and prompts
-    │       └── services/     # Decision trace storage
+    │       └── services/     # Conversation flow, traces, and JSONL audit logs
     ├── frontend/
     │   ├── index.html
     │   ├── style.css
     │   └── script.js
-    └── dataset_selected_h264/ # Local sign videos
+    └── dataset/               # Local sign videos
 ```
 
 ## Getting Started
 
 ### Requirements
 
-- Python 3.10 or newer
+- Python 3.11 or newer
 - A Google AI Studio API key for Gemini-generated replies (optional for catalog search and quiz)
 
 ### Install
@@ -96,11 +99,37 @@ Open `http://127.0.0.1:5500` while the backend is running.
 | Method | Path | Purpose |
 | --- | --- | --- |
 | `POST` | `/chat` | Search the sign catalog and return the result, trace ID, and optional grounded model reply. |
-| `GET` | `/quiz` | Get quiz questions and video paths. |
+| `POST` | `/alternatives` | Ask for the next candidate without repeating suggestions already shown. |
+| `GET` | `/signs` | Browse the catalog. |
+| `GET` | `/quiz` | Get randomized quiz questions and distinct distractors from the full catalog. |
 | `GET` | `/trace/{trace_id}` | Retrieve the decision trace for a response. |
-| `POST` | `/feedback` | Submit feedback on a result. |
+| `POST` | `/feedback` | Submit feedback on a result; feedback is appended to the JSONL audit log. |
 | `GET` | `/models` | List Gemini models available to the configured key. |
 | `GET` | `/videos/{path}` | Serve a catalog video. |
+
+## Evaluation
+
+The 40-case prompt set and runner are in `ISHARA/backend/evaluation_test_set.csv` and `ISHARA/backend/run_evaluation.py`.
+
+Run the evaluator from the `ISHARA` directory:
+
+```powershell
+python backend\run_evaluation.py
+```
+
+Or, from the `ISHARA/backend` directory:
+
+```powershell
+python run_evaluation.py
+```
+
+Without `--url`, the runner uses FastAPI's in-process `TestClient`. To evaluate a backend that is already running, pass its URL:
+
+```powershell
+python backend\run_evaluation.py --url http://127.0.0.1:8000
+```
+
+Each run writes detailed JSONL results and a JSON summary to `ISHARA/backend/evaluation_outputs/`. These generated reports are ignored by Git. The backend's JSONL audit logs are stored outside the source tree under the operating system's temporary `ishara/logs/` directory by default; set `ISHARA_DATA_DIR` to choose a persistent data directory outside the project.
 
 ## Scope and Limitations
 

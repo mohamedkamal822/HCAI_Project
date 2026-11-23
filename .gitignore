@@ -8,4 +8,6 @@ __pycache__/
 .vscode/
 .idea/
 dataset - rebirth/
-WEEK5_DELIVERABLES.md
+# Runtime audit logs and generated evaluation reports
+ISHARA/backend/logs/
+ISHARA/backend/evaluation_outputs/
