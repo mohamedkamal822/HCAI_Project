@@ -1,9 +1,0 @@
-.env
-backend/.env
-backend/logs/
-eval/outputs/
-__pycache__/
-*.pyc
-dataset - rebirth copy/
-dataset_selected/
-.venv/

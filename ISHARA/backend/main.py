@@ -5,10 +5,11 @@ from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
 
 from .app.api.routes import router
-from .app.core.config import MAX_TRACES, SIGNS_PATH, VIDEOS_DIR
+from .app.core.config import FRONTEND_DIR, LOGS_DIR, MAX_TRACES, SIGNS_PATH, VIDEOS_DIR
 from .app.domain.catalog import SignCatalog
 from .app.llm.gemini import GeminiService
 from .app.services.traces import TraceStore
+from .app.services.audit_log import JsonlAuditLog
 
 
 app = FastAPI(
@@ -25,8 +26,10 @@ app.add_middleware(
 )
 app.state.catalog = SignCatalog(SIGNS_PATH)
 app.state.traces = TraceStore(MAX_TRACES)
+app.state.audit_log = JsonlAuditLog(LOGS_DIR)
 app.state.gemini = GeminiService()
 app.mount("/videos", StaticFiles(directory=str(VIDEOS_DIR)), name="videos")
+app.mount("/app", StaticFiles(directory=str(FRONTEND_DIR), html=True), name="frontend")
 app.include_router(router)
 
 
@@ -39,6 +42,8 @@ async def chat_validation_handler(request: Request, error: RequestValidationErro
     input_text = body.get("message", "")
     trace = {
         "rule": "R5",
+        "rule_name": "Out of scope",
+        "badge": {"icon": "?", "text": "Out of scope"},
         "result_type": "out_of_scope",
         "input": input_text,
         "detected_intent": "invalid_chat_input",
@@ -52,6 +57,12 @@ async def chat_validation_handler(request: Request, error: RequestValidationErro
             "status": "out_of_scope",
             "rule": "R5",
             "reply": "أرسل كلمة أو عبارة قصيرة للبحث، أو اكتب «اختبار» لبدء الاختبار.",
+            "rule_name": "Out of scope",
+            "badge": {"icon": "?", "text": "Out of scope"},
+            "language": "ar",
+            "results": [],
+            "actions": ["browse"],
+            "trace": trace,
             "trace_id": trace_id,
         },
         headers={"Access-Control-Allow-Origin": "*"},
@@ -68,12 +79,19 @@ async def system_error_handler(request: Request, error: Exception):
         "detected_intent": "system_failure",
     }
     trace_id = app.state.traces.add(trace)
+    app.state.audit_log.append("errors.jsonl", {**trace, "trace_id": trace_id})
     return JSONResponse(
         status_code=503,
         content={
             "status": "system_error",
             "rule": "R6",
+            "rule_name": "System problem",
+            "badge": {"icon": "!", "text": "System problem"},
             "reply": "واجهنا مشكلة مؤقتة. حاول مرة أخرى بعد قليل.",
+            "language": "ar",
+            "results": [],
+            "actions": ["retry", "edit", "start_over"],
+            "trace": trace,
             "error_type": type(error).__name__,
             "trace_id": trace_id,
             "retryable": True,

@@ -1,155 +1,177 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ISHARA | Learn Sign Language</title>
-
+<title>إشارة | اتعلم لغة الإشارة المصرية</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+<a class="skip-link" href="#userInput" data-i18n="skip">Skip to the chat</a>
 
-<nav>
+<nav aria-label="Main" data-i18n-attr="aria-label:navLabel">
   <div class="logo">CoMind<span>.</span></div>
   <div class="nav-links">
-    <a href="#learn">Learn</a>
-    <a href="#quiz">Quiz</a>
-    <a href="#learn" class="nav-cta">Try it ↗</a>
+    <a href="#learn" data-i18n="navLearn">Learn</a>
+    <a href="#quiz" data-i18n="navQuiz">Quiz</a>
+    <button type="button" class="linklike" onclick="openHelp()" data-i18n="navHelp">Help</button>
+    <button type="button" class="lang-btn" id="langBtn" onclick="toggleLang()">English</button>
+    <a href="#learn" class="nav-cta" onclick="focusInput()" data-i18n="navTry">Try it ↗</a>
   </div>
 </nav>
 
+<main>
 <header class="hero">
   <div>
-    <div class="eyebrow">✳ SIGN LANGUAGE, MADE CLOSER</div>
-    <h1>Every sign brings us <em>closer.</em></h1>
-    <p>
-      Discover Egyptian Sign Language through visual demonstrations,
-      simple explanations, and fun interactive practice.
-      One word at a time.
-    </p>
+    <div class="eyebrow" data-i18n="heroEyebrow">✳ SIGN LANGUAGE, MADE CLOSER</div>
+    <h1 data-i18n-html="heroTitle">Every sign brings us <em>closer.</em></h1>
+    <p data-i18n="heroText">Discover Egyptian Sign Language through verified sign videos, clear labels, and interactive practice. One word at a time.</p>
     <div class="hero-buttons">
-      <button class="btn btn-primary" onclick="document.querySelector('#learn').scrollIntoView()">Start learning ↗</button>
-      <button class="btn btn-light" onclick="document.querySelector('#quiz').scrollIntoView()">Take the quiz ✳</button>
+      <button class="btn btn-primary" onclick="document.querySelector('#learn').scrollIntoView(); focusInput()" data-i18n="heroStart">Start learning ↗</button>
+      <button class="btn btn-light" onclick="document.querySelector('#quiz').scrollIntoView()" data-i18n="heroQuiz">Take the quiz ✳</button>
     </div>
   </div>
-
-  <div class="hero-art">
-    <div class="float-card card-one">✋ Visual learning<small>See signs in action</small></div>
+  <div class="hero-art" aria-hidden="true">
+    <div class="float-card card-one"><span data-i18n="float1">✋ Visual learning</span><small data-i18n="float1s">See signs in action</small></div>
     <div class="art-circle">🤟</div>
-    <div class="float-card card-two">✳ Learn at your pace<small>Practice without pressure</small></div>
+    <div class="float-card card-two"><span data-i18n="float2">✳ Learn at your pace</span><small data-i18n="float2s">Practice without pressure</small></div>
   </div>
 </header>
 
-<section class="section chat-section" id="learn">
+<section class="section chat-section" id="learn" aria-labelledby="learn-title">
   <div class="section-heading">
     <div>
-      <div class="eyebrow">YOUR LEARNING SPACE</div>
-      <h2>Let's learn a sign.</h2>
+      <div class="eyebrow" data-i18n="learnEyebrow">YOUR LEARNING SPACE</div>
+      <h2 id="learn-title" data-i18n="learnTitle">Let's learn a sign.</h2>
     </div>
-    <p>Type a word or phrase in Arabic or English. Explore how the assistant lookup works.</p>
+    <p data-i18n="learnText">Type a word in Arabic or English. Every answer tells you if it is an exact match, a close word, or not found, and you can see why.</p>
   </div>
 
   <div class="chat-layout">
-    <div class="chat-info">
+    <aside class="chat-info" aria-labelledby="aboutTitle">
       <div>
-        <div class="chat-icon">✋</div>
-        <h3>Small words.<br>Big connections.</h3>
-        <p>Explore signs through a simple conversation. If a sign cannot be verified, the assistant should say so clearly.</p>
+        <div class="chat-icon" aria-hidden="true">✋</div>
+        <h3 id="aboutTitle" data-i18n-html="aboutTitle">Small words.<br>Big connections.</h3>
+        <p data-i18n="aboutText">CoMind is an AI assistant. It only shows signs from a dataset of 56 words that we are sure of. If it isn't sure, it tells you and doesn't guess.</p>
       </div>
-      <div style="font-size:12px;color:#d4e2d8">✳ Designed around Explainability</div>
-    </div>
+
+      <div class="settings" role="group" aria-labelledby="settings-title">
+        <h4 id="settings-title" data-i18n="setTitle">Your settings</h4>
+        <div class="setting-row">
+          <label for="exactOnly"><span data-i18n="setExact">Exact matches only</span><small data-i18n="setExactS">Hide close words</small></label>
+          <input type="checkbox" role="switch" class="switch" id="exactOnly">
+        </div>
+        <div class="setting-row">
+          <span class="lbl" id="sizeLabel" data-i18n="setSize">Text size</span>
+          <div class="size-buttons" role="group" aria-labelledby="sizeLabel">
+            <button type="button" data-scale="1" aria-pressed="true" data-i18n-attr="aria-label:size1">A</button>
+            <button type="button" data-scale="1.25" aria-pressed="false" data-i18n-attr="aria-label:size2">A+</button>
+            <button type="button" data-scale="1.5" aria-pressed="false" data-i18n-attr="aria-label:size3">A++</button>
+          </div>
+        </div>
+        <div class="setting-row">
+          <label for="highContrast" data-i18n="setContrast">High contrast</label>
+          <input type="checkbox" role="switch" class="switch" id="highContrast">
+        </div>
+      </div>
+
+      <div class="info-links">
+        <button type="button" onclick="openBrowse()" data-i18n="browseBtn">Browse the 56 words</button>
+        <button type="button" onclick="openHelp()" data-i18n="helpBtn">Help and data</button>
+      </div>
+    </aside>
 
     <div class="chatbox" id="chatbox">
       <div class="chat-header">
-        <div class="bot-avatar">🌿</div>
-        <div class="chat-header-title">
-          <strong>Ishara Assistant</strong>
-          <small><span class="online"></span> Interactive prototype</small>
+        <div class="bot-avatar" aria-hidden="true">🌿</div>
+        <div>
+          <strong data-i18n="botName">Ishara Assistant</strong>
+          <small id="connStatus"></small>
         </div>
+        <div class="stage-pill" id="stagePill"></div>
         <button class="chat-maximize" id="chatMaximize" type="button" aria-label="Maximize chat" title="Maximize chat">⛶</button>
       </div>
 
-      <div class="messages" id="messages" aria-live="polite">
-        <div class="message bot-message">
-          أهلاً بيك! 👋 أنا مساعد تعليمي يستخدم مجموعة فيديوهات موثقة ومحدودة. اكتب كلمة أو اختَر مثالاً.
-        </div>
-      </div>
+      <div class="messages" id="messages" role="log" aria-live="polite" aria-relevant="additions" data-i18n-attr="aria-label:convLabel"></div>
 
-      <div class="quick-prompts">
-        <button type="button" onclick="sendWord('عامل إيه')">عامل إيه</button>
-        <button type="button" onclick="sendWord('بحب')">بحب</button>
-        <button type="button" onclick="sendWord('بسرعة')">بسرعة</button>
-        <button type="button" onclick="sendWord('صباح الخير')">صباح الخير</button>
-      </div>
+      <div class="quick-prompts" id="quickPrompts" role="group" data-i18n-attr="aria-label:suggLabel"></div>
 
-      <form class="chat-input" id="chatForm">
-        <input id="userInput" placeholder="Type a word or phrase..." autocomplete="off" required>
-        <button class="btn btn-primary" type="submit">Send ↗</button>
+      <form class="chat-input" id="chatForm" autocomplete="off">
+        <label for="userInput" class="visually-hidden" data-i18n="inputLabel">Type a word in Arabic or English</label>
+        <input id="userInput" dir="auto" maxlength="300" required data-i18n-attr="placeholder:inputPh">
+        <button class="btn btn-primary" type="submit" data-i18n="send">Send ↗</button>
       </form>
+      <div class="hint" data-i18n-html="hint"></div>
     </div>
   </div>
 
   <div class="features">
     <div class="feature">
-      <div class="emoji">👀</div>
-      <h3>Learn visually</h3>
-      <p>Sign videos help learners observe the movement instead of relying on text alone.</p>
+      <div class="emoji" aria-hidden="true">👀</div>
+      <h3 data-i18n="f1t">Learn visually</h3>
+      <p data-i18n="f1p">Watch each sign, replay it, and slow it down to see the hands clearly.</p>
     </div>
     <div class="feature">
-      <div class="emoji">🔎</div>
-      <h3>Understand the result</h3>
-      <p>The intended system explains whether a result is an exact match or a related suggestion.</p>
+      <div class="emoji" aria-hidden="true">🔎</div>
+      <h3 data-i18n="f2t">Understand the result</h3>
+      <p data-i18n="f2p">“Why this result?” tells you in simple words how CoMind found each answer.</p>
     </div>
     <div class="feature">
-      <div class="emoji">🛡️</div>
-      <h3>No made-up signs</h3>
-      <p>If no verified result exists, the assistant should clearly tell the learner.</p>
+      <div class="emoji" aria-hidden="true">🛡️</div>
+      <h3 data-i18n="f3t">No made-up signs</h3>
+      <p data-i18n="f3p">If we don't have a sign we're sure of, CoMind says so. Close words are always marked as not the same word.</p>
     </div>
   </div>
 </section>
 
-<section class="section quiz-section" id="quiz">
+<section class="section quiz-section" id="quiz" aria-labelledby="quiz-title">
   <div class="section-heading">
     <div>
-      <div class="eyebrow">WATCH · THINK · ANSWER</div>
-      <h2>Can you read the sign?</h2>
+      <div class="eyebrow" data-i18n="quizEyebrow">WATCH · THINK · ANSWER</div>
+      <h2 id="quiz-title" data-i18n="quizTitle">Can you read the sign?</h2>
     </div>
-    <p>Watch the sign language video and choose the word that matches its meaning.</p>
+    <p data-i18n="quizText">Watch the sign video and choose the word it means.</p>
   </div>
 
   <div class="quiz-wrap">
     <div class="quiz-top">
-      <h3>✋ Sign Challenge</h3>
-      <div class="score-pill" id="scorePill">Score: 0 / 5</div>
+      <h3 data-i18n="quizBox">✋ Sign Challenge</h3>
+      <div class="score-pill" id="scorePill" aria-live="polite"></div>
     </div>
-
-    <div class="progress">
+    <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="5" aria-valuenow="0" id="progress" data-i18n-attr="aria-label:quizProgress">
       <div class="progress-bar" id="progressBar"></div>
     </div>
-      <div class="progress-label" id="progressLabel" aria-live="polite">Progress: 0 of 5</div>
-
     <div id="quizContent"></div>
-
     <div class="quiz-bottom">
-      <small id="quizStatus">Question 1 of 5</small>
-      <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()" disabled>
-        Next question →
-      </button>
+      <small id="quizStatus"></small>
+      <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()" disabled></button>
     </div>
   </div>
 </section>
+</main>
 
 <footer>
   <div>
-    <div class="logo" style="color:white">CoMind<span>.</span></div>
-    <p>Learning to communicate, one sign at a time.</p>
+    <div class="logo" style="color:white">CoMind<span style="color:var(--lime)">.</span></div>
+    <p data-i18n="footTag">Learning to communicate, one sign at a time.</p>
   </div>
-  <div style="font-size:13px">A student prototype · <a href="#learn">Explore the demo ↑</a></div>
+  <div style="font-size:.9rem"><span data-i18n="footData">A student prototype · Data: Egyptian Sign Language Recognition (Kaggle)</span> · <a href="#learn" data-i18n="footBack">Back to the chat ↑</a></div>
 </footer>
 
-<script src="script.js" defer></script>
+<dialog id="browseDialog" aria-labelledby="browseTitle">
+  <h2 id="browseTitle" data-i18n="browseTitle">All 56 words</h2>
+  <p data-i18n="browseText">These are the only words CoMind can show. Choose one to see its sign.</p>
+  <div class="word-grid" id="wordGrid"></div>
+  <div class="close-row"><button class="btn btn-light" type="button" onclick="this.closest('dialog').close()" data-i18n="close">Close</button></div>
+</dialog>
 
+<dialog id="helpDialog" aria-labelledby="helpTitle">
+  <h2 id="helpTitle" data-i18n="helpTitle">Help and data</h2>
+  <div id="helpBody"></div>
+  <div class="close-row"><button class="btn btn-primary" type="button" onclick="this.closest('dialog').close()" data-i18n="close">Close</button></div>
+</dialog>
+
+<script src="script.js" defer></script>
 </body>
 </html>

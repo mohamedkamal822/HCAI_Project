@@ -7,9 +7,9 @@ from secrets import choice
 import httpx
 
 from ..core.config import GEMINI_API_URL, gemini_model
-from .prompts import acknowledgement_prompt
+from .prompts import grounded_reply_prompt
 
-ACKNOWLEDGEMENT_STYLES = ("ودودة ومشجعة", "هادئة وواضحة", "طبيعية ومباشرة", "متحمسة ولطيفة", "مساندة ومهنية", "بسيطة ومبهجة")
+REPLY_STYLES = ("warm and encouraging", "calm and clear", "natural and direct", "supportive and professional", "concise and friendly")
 
 
 class GeminiAPIError(Exception):
@@ -23,7 +23,7 @@ class GeminiService:
     def __init__(self):
         self._recent_phrases: deque[str] = deque(maxlen=8)
 
-    def generate_relevant_reply(self, result_type: str, arabic: str, english: str) -> tuple[str | None, dict]:
+    def generate_relevant_reply(self, rule: str, language: str, results: list[dict], query: str = "") -> tuple[str | None, dict]:
         token = os.getenv("GEMINI_API_KEY")
         model = gemini_model()
         if not token:
@@ -32,8 +32,8 @@ class GeminiService:
             return None, {"used": False, "reason": "GEMINI_API_KEY requires rotation confirmation"}
 
         for _ in range(2):
-            style = choice(ACKNOWLEDGEMENT_STYLES)
-            phrase, metadata = self._generate(token, model, result_type, arabic, english, style)
+            style = choice(REPLY_STYLES)
+            phrase, metadata = self._generate(token, model, rule, language, results, style, query)
             if phrase and phrase not in self._recent_phrases:
                 self._recent_phrases.append(phrase)
                 return phrase, metadata
@@ -56,14 +56,8 @@ class GeminiService:
             model_ids = [item for item in model_ids if query.casefold() in item.casefold()]
         return model_ids
 
-    def _generate(self, token: str, model: str, result_type: str, arabic: str, english: str, style: str) -> tuple[str | None, dict]:
-        payload = acknowledgement_prompt(
-            result_type,
-            arabic,
-            english,
-            style,
-            self._recent_phrases[-1] if self._recent_phrases else "",
-        )
+    def _generate(self, token: str, model: str, rule: str, language: str, results: list[dict], style: str, query: str) -> tuple[str | None, dict]:
+        payload = grounded_reply_prompt(rule, language, results, style, self._recent_phrases[-1] if self._recent_phrases else "", query)
         payload["generationConfig"] = {
             "temperature": 0.85,
             "maxOutputTokens": 160,
@@ -85,21 +79,13 @@ class GeminiService:
             response.raise_for_status()
             text = response.json()["candidates"][0]["content"]["parts"][0]["text"]
             phrase = json.loads(text)["phrase"].strip()
-            arabic_words = re.findall(r"[\u0621-\u064A]+", phrase)
-            includes_learning_action = re.search(
-                r"فيديو|شاهد|شاهدي|شوف|شوفي|اتفرج|اتفرجي|تابع|تابعي|جرب|جرّب|جربي|تدرب|تدرّب|راجِع|راجع|راجعي",
-                phrase,
-            )
-            if (
-                len(phrase) > 200
-                or "\n" in phrase
-                or not 4 <= len(arabic_words) <= 14
-                or arabic not in phrase
-                or not includes_learning_action
-                or re.search(r"https?://|www\.|[A-Za-z0-9]", phrase)
-            ):
+            labels = [item.get("arabic" if language == "ar" else "english", "") for item in results]
+            valid_language = bool(re.search(r"[\u0600-\u06ff]", phrase)) if language == "ar" else bool(re.search(r"[A-Za-z]", phrase))
+            has_grounded_label = rule not in {"R1", "R2"} or any(label and label.casefold() in phrase.casefold() for label in labels)
+            requires_nonmatch_clarity = rule not in {"R3", "R4"} or bool(re.search(r"مش نفس|مش الكلمة|قريبة|ملقيتش|لم أجد|لم اجد|مفيش|لا توجد|مش موجود|not the same|similar|no verified|could not find|no match", phrase, re.I))
+            if len(phrase) > 300 or "\n" in phrase or not valid_language or not has_grounded_label or not requires_nonmatch_clarity or re.search(r"https?://|www\.", phrase):
                 return None, {"used": False, "reason": "IrrelevantOrInvalidModelResponse", "model": model}
-            return phrase, {"used": True, "model": model, "style": style, "grounded_in": arabic}
+            return phrase, {"used": True, "model": model, "style": style, "grounded_in": labels, "rule": rule}
         except httpx.HTTPStatusError as error:
             return None, {
                 "used": False,

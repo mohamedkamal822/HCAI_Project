@@ -6,7 +6,7 @@ import subprocess
 BASE_DIR = Path(__file__).resolve().parent
 
 SOURCE_DIR = BASE_DIR / "dataset_selected"
-OUTPUT_DIR = BASE_DIR / "dataset_selected_h264"
+OUTPUT_DIR = BASE_DIR / "dataset"
 
 # FFmpeg executable
 FFMPEG = Path(

@@ -14,7 +14,7 @@
             "how are you doing",
             "اخبارك"
         ],
-        "video": "dataset_selected_h264/3amel eh/3amel eh_7466.mp4"
+"video": "dataset/3amel eh/3amel eh_7466.mp4"
     },
     "3ieb": {
         "id": "3ieb",
@@ -31,7 +31,7 @@
             "disgraceful",
             "shameful"
         ],
-        "video": "dataset_selected_h264/3ieb/3ieb_4781.mp4"
+        "video": "dataset/3ieb/3ieb_4781.mp4"
     },
     "3rabia": {
         "id": "3rabia",
@@ -48,7 +48,7 @@
             "vehicle",
             "auto"
         ],
-        "video": "dataset_selected_h264/3rabia/3rabia_2138.mp4"
+        "video": "dataset/3rabia/3rabia_2138.mp4"
     },
     "3waz": {
         "id": "3waz",
@@ -65,7 +65,7 @@
             "need",
             "wanna"
         ],
-        "video": "dataset_selected_h264/3waz/3waz_9342.mp4"
+        "video": "dataset/3waz/3waz_9342.mp4"
     },
     "akhoia": {
         "id": "akhoia",
@@ -82,7 +82,7 @@
             "brother",
             "bro"
         ],
-        "video": "dataset_selected_h264/akhoia/akhoia_9368.mp4"
+        "video": "dataset/akhoia/akhoia_9368.mp4"
     },
     "alam": {
         "id": "alam",
@@ -99,7 +99,7 @@
             "hurt",
             "ache"
         ],
-        "video": "dataset_selected_h264/alam/alam_4779.mp4"
+        "video": "dataset/alam/alam_4779.mp4"
     },
     "bhab": {
         "id": "bhab",
@@ -116,7 +116,7 @@
             "love",
             "i like"
         ],
-        "video": "dataset_selected_h264/bhab/bhab_5770.mp4"
+        "video": "dataset/bhab/bhab_5770.mp4"
     },
     "bkrh": {
         "id": "bkrh",
@@ -133,7 +133,7 @@
             "i dislike",
             "bakrahh"
         ],
-        "video": "dataset_selected_h264/bkrh/bkrh_8577.mp4"
+        "video": "dataset/bkrh/bkrh_8577.mp4"
     },
     "bsor3a": {
         "id": "bsor3a",
@@ -150,7 +150,7 @@
             "hurry",
             "على السريع"
         ],
-        "video": "dataset_selected_h264/bsor3a/bsor3a_6743.mp4"
+        "video": "dataset/bsor3a/bsor3a_6743.mp4"
     },
     "delwaty": {
         "id": "delwaty",
@@ -167,7 +167,7 @@
             "الآن",
             "right now"
         ],
-        "video": "dataset_selected_h264/delwaty/delwaty_6970.mp4"
+        "video": "dataset/delwaty/delwaty_6970.mp4"
     },
     "docktor": {
         "id": "docktor",
@@ -184,7 +184,7 @@
             "dr",
             "physician"
         ],
-        "video": "dataset_selected_h264/docktor/docktor_4610.mp4"
+        "video": "dataset/docktor/docktor_4610.mp4"
     },
     "efrdha": {
         "id": "efrdha",
@@ -201,7 +201,7 @@
             "suppose",
             "assume"
         ],
-        "video": "dataset_selected_h264/efrdha/efrdha_4749.mp4"
+        "video": "dataset/efrdha/efrdha_4749.mp4"
     },
     "ehtrem nfsk": {
         "id": "ehtrem nfsk",
@@ -218,7 +218,7 @@
             "have some self respect",
             "ihtaram nafsak"
         ],
-        "video": "dataset_selected_h264/ehtrem nfsk/ehtrem nfsk_3563.mp4"
+        "video": "dataset/ehtrem nfsk/ehtrem nfsk_3563.mp4"
     },
     "elnhrda": {
         "id": "elnhrda",
@@ -235,7 +235,7 @@
             "this day",
             "today"
         ],
-        "video": "dataset_selected_h264/elnhrda/elnhrda_3905.mp4"
+        "video": "dataset/elnhrda/elnhrda_3905.mp4"
     },
     "ermy wra dhrk": {
         "id": "ermy wra dhrk",
@@ -252,7 +252,7 @@
             "let it go",
             "انسى الموضوع"
         ],
-        "video": "dataset_selected_h264/ermy wra dhrk/ermy wra dhrk_2054.mp4"
+        "video": "dataset/ermy wra dhrk/ermy wra dhrk_2054.mp4"
     },
     "fatan": {
         "id": "fatan",
@@ -269,7 +269,7 @@
             "mischievous",
             "instigator"
         ],
-        "video": "dataset_selected_h264/fatan/fatan_3500.mp4"
+        "video": "dataset/fatan/fatan_3500.mp4"
     },
     "fe sark": {
         "id": "fe sark",
@@ -286,7 +286,7 @@
             "privately",
             "بالسر"
         ],
-        "video": "dataset_selected_h264/fe sark/fe sark_5799.mp4"
+        "video": "dataset/fe sark/fe sark_5799.mp4"
     },
     "flos": {
         "id": "flos",
@@ -303,7 +303,7 @@
             "فلوسي",
             "قروش"
         ],
-        "video": "dataset_selected_h264/flos/flos_8472.mp4"
+        "video": "dataset/flos/flos_8472.mp4"
     },
     "fokk many": {
         "id": "fokk many",
@@ -320,7 +320,7 @@
             "leave me",
             "get away from me"
         ],
-        "video": "dataset_selected_h264/fokk many/fokk many_8801.mp4"
+        "video": "dataset/fokk many/fokk many_8801.mp4"
     },
     "gomma": {
         "id": "gomma",
@@ -337,7 +337,7 @@
             "يوم الجمعة",
             "fri"
         ],
-        "video": "dataset_selected_h264/gomma/gomma_5099.mp4"
+        "video": "dataset/gomma/gomma_5099.mp4"
     },
     "harmy": {
         "id": "harmy",
@@ -354,7 +354,7 @@
             "robber",
             "burglar"
         ],
-        "video": "dataset_selected_h264/harmy/harmy_6531.mp4"
+        "video": "dataset/harmy/harmy_6531.mp4"
     },
     "hba hba": {
         "id": "hba hba",
@@ -371,7 +371,7 @@
             "gradually",
             "bit by bit"
         ],
-        "video": "dataset_selected_h264/hba hba/hba hba_3743.mp4"
+        "video": "dataset/hba hba/hba hba_3743.mp4"
     },
     "helw awy": {
         "id": "helw awy",
@@ -388,7 +388,7 @@
             "very good",
             "beautiful"
         ],
-        "video": "dataset_selected_h264/helw awy/helw awy_9053.mp4"
+        "video": "dataset/helw awy/helw awy_9053.mp4"
     },
     "hta hta": {
         "id": "hta hta",
@@ -405,7 +405,7 @@
             "part by part",
             "little piece"
         ],
-        "video": "dataset_selected_h264/hta hta/hta hta_2694.mp4"
+        "video": "dataset/hta hta/hta hta_2694.mp4"
     },
     "kdab": {
         "id": "kdab",
@@ -422,7 +422,7 @@
             "deceiver",
             "كدب"
         ],
-        "video": "dataset_selected_h264/kdab/kdab_5354.mp4"
+        "video": "dataset/kdab/kdab_5354.mp4"
     },
     "khaif": {
         "id": "khaif",
@@ -439,7 +439,7 @@
             "scared",
             "fear"
         ],
-        "video": "dataset_selected_h264/khaif/khaif_4048.mp4"
+        "video": "dataset/khaif/khaif_4048.mp4"
     },
     "khaly balk": {
         "id": "khaly balk",
@@ -456,7 +456,7 @@
             "watch out",
             "take care"
         ],
-        "video": "dataset_selected_h264/khaly balk/khaly balk_1771.mp4"
+        "video": "dataset/khaly balk/khaly balk_1771.mp4"
     },
     "khatbty": {
         "id": "khatbty",
@@ -473,7 +473,7 @@
             "fiance",
             "خطيبه"
         ],
-        "video": "dataset_selected_h264/khatbty/khatbty_8110.mp4"
+        "video": "dataset/khatbty/khatbty_8110.mp4"
     },
     "kolya": {
         "id": "kolya",
@@ -490,7 +490,7 @@
             "faculty",
             "university"
         ],
-        "video": "dataset_selected_h264/kolya/kolya_8543.mp4"
+        "video": "dataset/kolya/kolya_8543.mp4"
     },
     "ktab": {
         "id": "ktab",
@@ -507,7 +507,7 @@
             "novel",
             "كتابي"
         ],
-        "video": "dataset_selected_h264/ktab/ktab_9962.mp4"
+        "video": "dataset/ktab/ktab_9962.mp4"
     },
     "mafish": {
         "id": "mafish",
@@ -524,7 +524,7 @@
             "مفيش حاجة",
             "ما فيش"
         ],
-        "video": "dataset_selected_h264/mafish/mafish_6558.mp4"
+        "video": "dataset/mafish/mafish_6558.mp4"
     },
     "makar": {
         "id": "makar",
@@ -541,7 +541,7 @@
             "sly",
             "crafty"
         ],
-        "video": "dataset_selected_h264/makar/makar_1690.mp4"
+        "video": "dataset/makar/makar_1690.mp4"
     },
     "manzel": {
         "id": "manzel",
@@ -558,7 +558,7 @@
             "home",
             "residence"
         ],
-        "video": "dataset_selected_h264/manzel/manzel_7442.mp4"
+        "video": "dataset/manzel/manzel_7442.mp4"
     },
     "mash mashy": {
         "id": "mash mashy",
@@ -575,7 +575,7 @@
             "broken",
             "not okay"
         ],
-        "video": "dataset_selected_h264/mash mashy/mash mashy_8205.mp4"
+        "video": "dataset/mash mashy/mash mashy_8205.mp4"
     },
     "mashy": {
         "id": "mashy",
@@ -592,7 +592,7 @@
             "ok",
             "alright"
         ],
-        "video": "dataset_selected_h264/mashy/mashy_1064.mp4"
+        "video": "dataset/mashy/mashy_1064.mp4"
     },
     "meraty": {
         "id": "meraty",
@@ -609,7 +609,7 @@
             "wife",
             "spouse"
         ],
-        "video": "dataset_selected_h264/meraty/meraty_2151.mp4"
+        "video": "dataset/meraty/meraty_2151.mp4"
     },
     "mohands": {
         "id": "mohands",
@@ -626,7 +626,7 @@
             "eng",
             "engineering"
         ],
-        "video": "dataset_selected_h264/mohands/mohands_9670.mp4"
+        "video": "dataset/mohands/mohands_9670.mp4"
     },
     "moshwash": {
         "id": "moshwash",
@@ -643,7 +643,7 @@
             "puzzled",
             "bewildered"
         ],
-        "video": "dataset_selected_h264/moshwash/moshwash_3464.mp4"
+        "video": "dataset/moshwash/moshwash_3464.mp4"
     },
     "msh 3waz": {
         "id": "msh 3waz",
@@ -660,7 +660,7 @@
             "do not want",
             "dont want"
         ],
-        "video": "dataset_selected_h264/msh 3waz/msh 3waz_7815.mp4"
+        "video": "dataset/msh 3waz/msh 3waz_7815.mp4"
     },
     "oda": {
         "id": "oda",
@@ -677,7 +677,7 @@
             "bedroom",
             "chamber"
         ],
-        "video": "dataset_selected_h264/oda/oda_2859.mp4"
+        "video": "dataset/oda/oda_2859.mp4"
     },
     "sabhl elkheer": {
         "id": "sabhl elkheer",
@@ -694,7 +694,7 @@
             "good day",
             "sabah elkhair"
         ],
-        "video": "dataset_selected_h264/sabhl elkheer/sabhl elkheer_5728.mp4"
+        "video": "dataset/sabhl elkheer/sabhl elkheer_5728.mp4"
     },
     "sabhlala": {
         "id": "sabhlala",
@@ -711,7 +711,7 @@
             "negligently",
             "recklessly"
         ],
-        "video": "dataset_selected_h264/sabhlala/sabhlala_8861.mp4"
+        "video": "dataset/sabhlala/sabhlala_8861.mp4"
     },
     "sadak": {
         "id": "sadak",
@@ -728,7 +728,7 @@
             "truthful",
             "الحق"
         ],
-        "video": "dataset_selected_h264/sadak/sadak_2164.mp4"
+        "video": "dataset/sadak/sadak_2164.mp4"
     },
     "sahby": {
         "id": "sahby",
@@ -745,7 +745,7 @@
             "friend",
             "buddy"
         ],
-        "video": "dataset_selected_h264/sahby/sahby_3868.mp4"
+        "video": "dataset/sahby/sahby_3868.mp4"
     },
     "sbak": {
         "id": "sbak",
@@ -762,7 +762,7 @@
             "plumbing",
             "pipe fitter"
         ],
-        "video": "dataset_selected_h264/sbak/sbak_4840.mp4"
+        "video": "dataset/sbak/sbak_4840.mp4"
     },
     "shar3": {
         "id": "shar3",
@@ -779,7 +779,7 @@
             "avenue",
             "شوارع"
         ],
-        "video": "dataset_selected_h264/shar3/shar3_4382.mp4"
+        "video": "dataset/shar3/shar3_4382.mp4"
     },
     "shbak": {
         "id": "shbak",
@@ -796,7 +796,7 @@
             "glass window",
             "pane"
         ],
-        "video": "dataset_selected_h264/shbak/shbak_8229.mp4"
+        "video": "dataset/shbak/shbak_8229.mp4"
     },
     "t3ban": {
         "id": "t3ban",
@@ -813,7 +813,7 @@
             "exhausted",
             "fatigued"
         ],
-        "video": "dataset_selected_h264/t3ban/t3ban_7085.mp4"
+        "video": "dataset/t3ban/t3ban_7085.mp4"
     },
     "tmam": {
         "id": "tmam",
@@ -830,7 +830,7 @@
             "okay fine",
             "تمام التمام"
         ],
-        "video": "dataset_selected_h264/tmam/tmam_4092.mp4"
+        "video": "dataset/tmam/tmam_4092.mp4"
     },
     "whashny": {
         "id": "whashny",
@@ -847,7 +847,7 @@
             "i miss you",
             "missing"
         ],
-        "video": "dataset_selected_h264/whashny/whashny_5033.mp4"
+        "video": "dataset/whashny/whashny_5033.mp4"
     },
     "whda whda": {
         "id": "whda whda",
@@ -864,7 +864,7 @@
             "gently",
             "step by step"
         ],
-        "video": "dataset_selected_h264/whda whda/whda whda_8267.mp4"
+        "video": "dataset/whda whda/whda whda_8267.mp4"
     },
     "y7takr": {
         "id": "y7takr",
@@ -881,7 +881,7 @@
             "scorn",
             "look down on"
         ],
-        "video": "dataset_selected_h264/y7takr/y7takr_9921.mp4"
+        "video": "dataset/y7takr/y7takr_9921.mp4"
     },
     "yabky": {
         "id": "yabky",
@@ -898,7 +898,7 @@
             "weep",
             "sob"
         ],
-        "video": "dataset_selected_h264/yabky/yabky_9085.mp4"
+        "video": "dataset/yabky/yabky_9085.mp4"
     },
     "yadhk": {
         "id": "yadhk",
@@ -915,7 +915,7 @@
             "giggle",
             "ضحكة"
         ],
-        "video": "dataset_selected_h264/yadhk/yadhk_1971.mp4"
+        "video": "dataset/yadhk/yadhk_1971.mp4"
     },
     "yallhwy": {
         "id": "yallhwy",
@@ -932,7 +932,7 @@
             "oh my god",
             "oh no"
         ],
-        "video": "dataset_selected_h264/yallhwy/yallhwy_5276.mp4"
+        "video": "dataset/yallhwy/yallhwy_5276.mp4"
     },
     "yshtm": {
         "id": "yshtm",
@@ -949,6 +949,6 @@
             "swear",
             "curse"
         ],
-        "video": "dataset_selected_h264/yshtm/yshtm_5838.mp4"
+        "video": "dataset/yshtm/yshtm_5838.mp4"
     }
 }
